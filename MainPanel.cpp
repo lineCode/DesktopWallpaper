@@ -1,0 +1,22 @@
+// MainPanel.cpp: implementation of the MainPanel class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "MainPanel.h"
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+MainPanel::MainPanel()
+{
+}
+
+MainPanel::~MainPanel()
+{
+}
+
+LRESULT MainPanel::ObjectProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+	return CustomControl::ObjectProc(uMsg, wParam, lParam);
+}
