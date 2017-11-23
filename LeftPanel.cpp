@@ -57,7 +57,10 @@ LRESULT LeftPanel::ObjectProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
 					LPTSTR tmp = Directory(this->hWnd);
 
 					if (tmp)
+                    {
 						SetFolderPath(tmp);
+                        delete []tmp;
+                    }
 					break;
 				}
 			}
@@ -94,7 +97,8 @@ LPTSTR LeftPanel::Directory(HWND hOwner)
     if ( SHGetPathFromIDList(pidl, mydir) )
 	{
 		result = new char[strlen( mydir )+1];
-		for ( int i = 0; i < (int)strlen( mydir ); i++ )
+        int i = 0;
+        for ( i = 0; i < (int)strlen( mydir ); i++ )
 		{
 			result[i] = mydir[i];
 			if ( mydir[i] == '\\' )
